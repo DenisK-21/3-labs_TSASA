@@ -26,12 +26,12 @@ void Annealing_Algorithm(const bool fun_selection)
 	const double T_MIN = 0.01;
 	double T_MAX = 10000, x_i = 0, f_min = 0;
 	int N = 0;
-	double x_min = 0, x_1 = (double)(rand() % 30000) / 10000;
+	double x_min = 0, x_1 = (double)(rand() % 25001) / 10000 + 1.5;
 	std::cout << " N      T         x       f(x)" << std::endl;
 	f_min = Multimodal_Unimodal_Fun(x_1, fun_selection);
 	while (T_MAX > T_MIN)
 	{
-		x_i = (double)(rand() % 30000) / 10000;
+		x_i = (double)(rand() % 25001) / 10000 + 1.5;
 		double delta_f = Multimodal_Unimodal_Fun(x_i, fun_selection) - Multimodal_Unimodal_Fun(x_1, fun_selection);
 		if (delta_f <= 0)
 		{
